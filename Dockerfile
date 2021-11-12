@@ -1,6 +1,6 @@
 FROM golang AS build
 
-RUN go get github.com/santhosh-tekuri/jsonschema/v5/cmd/jv@latest
+RUN CGO_ENABLED=0  go get -ldflags '-w' github.com/santhosh-tekuri/jsonschema/v5/cmd/jv@latest
 
 FROM alpine
 
